@@ -13,6 +13,10 @@ const PORT_NO = 5000 | process.env.PORT;
 
 const DB_URI = process.env.MONGO_DB;
 
+app.use("/", (req, res, next) => {
+  res.status(200).json({ message: "Welcome back Raju" });
+});
+
 mongoose
   .connect(DB_URI)
   .then(() => console.log("server is connected to DB"))
